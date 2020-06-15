@@ -24,7 +24,8 @@ http
         body.push(chunk);
       })
       .on('end', () => {
-        let payload = Buffer.concat(body).toString();
+        const dataAsString = body.length === 0 ? 'null' : Buffer.concat(body).toString();
+        let payload = JSON.parse(dataAsString);
         const chosenHandler = handlers[trimmedPath] ?? handlers.notFound;
 
         const AggregatedData = {
