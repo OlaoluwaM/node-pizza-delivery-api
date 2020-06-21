@@ -5,6 +5,7 @@ const fs = require('fs');
 const url = require('url');
 const http = require('http');
 const https = require('https');
+const config = require('./lib/config');
 const handlers = require('./lib/handlers');
 
 http
@@ -40,10 +41,10 @@ http
           const { statusCode, returnedData } = await chosenHandler(AggregatedData);
           res.writeHead(statusCode, { 'Content-type': 'application/json' });
           res.end(returnedData);
-          console.log(`Responded with ${returnedData} and a statusCode of ${statusCode}`);
+          console.log(`Responded with ${returnedData} with a statusCode of ${statusCode}`);
         })();
       });
   })
-  .listen(5000, () => {
-    console.log('Listening on port 5000');
+  .listen(config.httpPort, () => {
+    console.log(`Listening on port ${config.httpPort}`);
   });
