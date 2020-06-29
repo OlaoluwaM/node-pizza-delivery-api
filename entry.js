@@ -27,7 +27,7 @@ http
       .on('end', () => {
         const dataAsString = body.length === 0 ? 'null' : Buffer.concat(body).toString();
         let payload = JSON.parse(dataAsString);
-        const chosenHandler = handlers[trimmedPath] ?? handlers.notFound;
+        const chosenHandler = handlers[trimmedPath.split('/')[0]] ?? handlers.notFound;
 
         const AggregatedData = {
           trimmedPath,

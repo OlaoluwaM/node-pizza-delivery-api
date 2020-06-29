@@ -1,0 +1,33 @@
+[
+  ["Pepperoni Pizza Small", 4.99],
+  ["Pepperoni Pizza Medium", 10.99],
+  ["Pepperoni Pizza Large", 15.99],
+
+  ["Extravaganza Pizza Small", 4.99],
+  ["Extravaganza Pizza Medium", 12.99],
+  ["Extravaganza Pizza Large", 19.99],
+
+  ["Barbecue Chicken Pizza Small", 5.99],
+  ["Barbecue Chicken Pizza Medium", 12.99],
+  ["Barbecue Chicken Pizza Large", 18.99],
+
+  ["Vegan Pizza Small", 5.99],
+  ["Vegan Pizza Medium", 14.99],
+  ["Vegan Pizza Large", 20.99],
+
+  ["Meatzza Small", 3.99],
+  ["Meatzza Medium", 9.99],
+  ["Meatzza Large", 16.99],
+
+  ["Meat Lover's Pizza Small", 6.99],
+  ["Meat Lover's Pizza Medium", 13.99],
+  ["Meat Lover's Pizza Large", 17.99],
+
+  ["Vanilla Ice-cream", 2.99],
+  ["Strawberry Ice-cream", 3.99],
+  ["Chocolate Ice-cream", 3.55],
+
+  ["Coke", 3.99],
+  ["Sprite", 1.59],
+  ["Mountain Dew", 2.99]
+]
