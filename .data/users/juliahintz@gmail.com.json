@@ -3,15 +3,9 @@
   "email": "juliahintz@gmail.com",
   "password": "54d7bbef3858de4daacddba5410992304ad1dfae33887f49a9b8464788496248",
   "streetAddress": "50 NE. Creekside Lane Springboro, OH 45066",
-  "hasToken": "20dfd5083f2bce4a734ada50",
+  "hasToken": "7bc616da82123ea91f690835",
   "cart": {
-    "Pepperoni Pizza Small": "$9.98 (x2)",
-    "Pepperoni Pizza Medium": "$10.99 (x1)",
-    "Extravaganza Pizza Medium": "$12.99 (x1)",
-    "Barbecue Chicken Pizza Large": "$37.98 (x2)",
-    "Coke": "$3.99 (x1)",
-    "Vanilla Ice-cream": "$2.99 (x1)",
-    "orderCount": "8 item(s)",
-    "totalPrice": "$78.92"
+    "totalPrice": "$0",
+    "orderCount": "0 items"
   }
 }
