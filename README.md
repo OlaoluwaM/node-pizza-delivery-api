@@ -35,7 +35,7 @@ It only needs a body, the body should be a stringified object with mandatory pro
 
 If any of these fields are missing, the server will respond with an error and status Code.
 
-Request example
+Request Example
 
 ```
 POST basUrl/users
@@ -99,7 +99,7 @@ token: Generated User token
 
 Deletes a user from the system. This request deletes all of a specified user's data. Requires the user's token in the headers, and the user's email as a query string parameter.
 
-Request example
+Request Example
 
 ```
 DELETE baseUrl/users?email=desiredUserEmail
@@ -118,7 +118,7 @@ Creates a new token for an existing user, if their token has expired because eac
 
 This request requires the user's credentials: email and password. Having a token in the headers of the request is optional.
 
-Request example
+Request Example
 
 ```
 POST baseUrl/tokens
@@ -138,7 +138,7 @@ POST baseUrl/tokens
 
 Retrieves the non-sensitive data of a user's token. Requires the token Id to be specified as a query string parameter, and it does not have any optional data
 
-Request example
+Request Example
 
 ```
 GET baseUrl/tokens?Id=token Id
@@ -155,7 +155,7 @@ Extends a user's session by an hour by extending the expiration time of their to
 
 Request requires user's email to be specified as a query string parameter, and a body containing the Id of the token to extend as well as `toExtend` which is a boolean property that extends the expiration time of the token by an hour **ONLY**.
 
-Request example
+Request Example
 
 ```
 PUT baseUrl/tokens?email=user's email
@@ -178,7 +178,7 @@ _Note: If `toExtend` is `false`, nothing happens_
 
 Deletes a token. Requires the token's Id as a query string parameter; it needs no optional data or request body
 
-Request example
+Request Example
 
 ```
 DELETE baseUrl/tokens?Id=tokenId
@@ -190,3 +190,95 @@ DELETE baseUrl/tokens?Id=tokenId
 ```
 
 ## /order
+
+This endpoint contains the subroute `/menu` which list all the items within the menu-- these items are hardcoded within .data/menu/menu.json.
+
+`/menu` takes the a logged in user's email as a query string parameter and has no optional data requirements. Additionally, only a `GET` request can be made to this route, any other type of request will fail.
+
+Request Example
+
+```
+GET baseUrl/order/menu?email=user email
+
+// No optional data
+
+//header
+token: generated token (valid)
+```
+
+### POST
+
+Enables a logged in user to create an order. Required is the current user's email as a query string parameter and in the body of the request is an object with an orders property which is an array of available menu items.
+If there is an item within the array that isn't in the menu, an error occurs and the order isn't saved.
+
+Request Example
+
+```
+POST baseUrl/order?email=user email
+
+// No optional data
+
+Body Example
+{
+  orders: ["Large Fries", "Coke" ...etc]
+}
+
+// headers
+token: generated token
+```
+
+### GET
+
+Retrieves the cart of the current user. Requires the current user's email as a query string parameter; It does not have any optional data.
+
+Request Example
+
+```
+GET baseUrl/order?email=user email
+
+// No optional data
+
+// headers
+token: generated token Id (valid)
+```
+
+### PUT
+
+Updates a user's cart. _The cart limit is 10_, if a user's cart count is below 10 they can add more items with this request, otherwise they cannot.
+
+Requires the same input as the `POST` request does.
+
+### Delete
+
+Empties the user's cart. This request requires the current user's email as a query string parameter and has no optional data.
+
+Request Example
+
+```
+DELETE baseUrl/order?email=user email
+
+// No optional data
+
+// headers
+token: generated token Id (valid)
+```
+
+## /checkout
+
+This endpoint only accepts a `POST` request. This request requires the user's email as a query string parameter, and a body with an object containing two properties `card` and `currency`, there is no optional data.
+
+Request Example
+
+```
+POST baseUrl/checkout?email=user email
+// No optional data
+
+// headers
+token: generated token Id (valid)
+
+Body Example
+{
+  currency: 'usd' or 'gdp', any other value will not be accepted
+  card: 'tok_mastercard' or 'tok_visa', any other value will not be accepted
+}
+```

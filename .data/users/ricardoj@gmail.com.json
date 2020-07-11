@@ -3,5 +3,9 @@
   "password": "7f0c74088f5be0f0be92cb0b7eb2761fdea00d17c7973bbba47e5fe992b6a0c8",
   "streetAddress": "9472 North Clark Ave. Marietta, GA 30008",
   "email": "ricardoj@gmail.com",
-  "hasToken": "4e77790f8bcc5992e6f322f1"
+  "hasToken": "1839c17b1bbb8f720d1f2e9f",
+  "cart": {
+    "totalPrice": "$0",
+    "orderCount": "0 items"
+  }
 }
