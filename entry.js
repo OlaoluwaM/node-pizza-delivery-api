@@ -39,8 +39,10 @@ function serverCallback(req, res) {
       };
 
       (async () => {
-        const response = await chosenHandler(AggregatedData);
-        helpersFuncObj.resHandler(response, res);
+        const { statusCode, returnedData } = await chosenHandler(AggregatedData);
+        res.writeHead(statusCode, { 'Content-type': 'application/json' });
+        res.end(returnedData);
+        console.log(`Responded with ${returnedData} with a statusCode of ${statusCode}`);
       })();
     });
 }
