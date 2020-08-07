@@ -33,6 +33,11 @@ function serverCallback(req, res) {
   });
 
   req.on('end', () => {
+    if (method === 'options') {
+      res.writeHead(200, responseHeaders);
+      res.end();
+      return;
+    }
     const dataAsString = body.length === 0 ? 'null' : Buffer.concat(body).toString();
     let payload = JSON.parse(dataAsString);
     const chosenHandler = handlers[trimmedPath.split('/')[0]] ?? handlers.notFound;
@@ -47,11 +52,6 @@ function serverCallback(req, res) {
 
     (async () => {
       const { statusCode, returnedData } = await chosenHandler(AggregatedData);
-      if (method === 'options') {
-        res.writeHead(200, responseHeaders);
-        res.end();
-        return;
-      }
       res.writeHead(statusCode, responseHeaders);
       res.end(returnedData);
       console.log(`Responded with ${returnedData} with a statusCode of ${statusCode}`);
