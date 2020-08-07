@@ -24,40 +24,39 @@ function serverCallback(req, res) {
 
   const method = req.method.toLowerCase();
 
-  if (method === 'options') {
-    res.writeHead(200, responseHeaders);
-    res.end();
-  }
-
   const { headers } = req;
 
   let body = [];
 
-  req
-    .on('data', chunk => {
-      body.push(chunk);
-    })
+  req.on('data', chunk => {
+    body.push(chunk);
+  });
 
-    .on('end', () => {
-      const dataAsString = body.length === 0 ? 'null' : Buffer.concat(body).toString();
-      let payload = JSON.parse(dataAsString);
-      const chosenHandler = handlers[trimmedPath.split('/')[0]] ?? handlers.notFound;
+  req.on('end', () => {
+    const dataAsString = body.length === 0 ? 'null' : Buffer.concat(body).toString();
+    let payload = JSON.parse(dataAsString);
+    const chosenHandler = handlers[trimmedPath.split('/')[0]] ?? handlers.notFound;
 
-      const AggregatedData = {
-        trimmedPath,
-        queryStringObject,
-        method,
-        headers,
-        payload,
-      };
+    const AggregatedData = {
+      trimmedPath,
+      queryStringObject,
+      method,
+      headers,
+      payload,
+    };
 
-      (async () => {
-        const { statusCode, returnedData } = await chosenHandler(AggregatedData);
-        res.writeHead(statusCode, responseHeaders);
-        res.end(returnedData);
-        console.log(`Responded with ${returnedData} with a statusCode of ${statusCode}`);
-      })();
-    });
+    (async () => {
+      const { statusCode, returnedData } = await chosenHandler(AggregatedData);
+      if (method === 'options') {
+        res.writeHead(200, responseHeaders);
+        res.end();
+        return;
+      }
+      res.writeHead(statusCode, responseHeaders);
+      res.end(returnedData);
+      console.log(`Responded with ${returnedData} with a statusCode of ${statusCode}`);
+    })();
+  });
 }
 
 http.createServer(serverCallback).listen(config.httpPort, () => {
