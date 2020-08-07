@@ -11,11 +11,23 @@ const handlers = require('./lib/handlers');
 const helpersFuncObj = require('./lib/helpers');
 
 function serverCallback(req, res) {
+  const responseHeaders = {
+    'Content-type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, DELETE, PUT',
+    'Access-Control-Allow-Headers': '*',
+  };
+
   const { pathname, query: queryStringObject } = url.parse(req.url, true);
 
   const trimmedPath = pathname.replace(/^\/+|\/+$/g, '');
 
   const method = req.method.toLowerCase();
+
+  if (method === 'options') {
+    res.writeHead(200, responseHeaders);
+    res.end();
+  }
 
   const { headers } = req;
 
@@ -25,6 +37,7 @@ function serverCallback(req, res) {
     .on('data', chunk => {
       body.push(chunk);
     })
+
     .on('end', () => {
       const dataAsString = body.length === 0 ? 'null' : Buffer.concat(body).toString();
       let payload = JSON.parse(dataAsString);
@@ -40,11 +53,7 @@ function serverCallback(req, res) {
 
       (async () => {
         const { statusCode, returnedData } = await chosenHandler(AggregatedData);
-        res.writeHead(statusCode, {
-          'Content-type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-        });
+        res.writeHead(statusCode, responseHeaders);
         res.end(returnedData);
         console.log(`Responded with ${returnedData} with a statusCode of ${statusCode}`);
       })();
