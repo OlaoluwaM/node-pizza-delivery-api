@@ -40,7 +40,10 @@ function serverCallback(req, res) {
 
       (async () => {
         const { statusCode, returnedData } = await chosenHandler(AggregatedData);
-        res.writeHead(statusCode, { 'Content-type': 'application/json' });
+        res.writeHead(statusCode, {
+          'Content-type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        });
         res.end(returnedData);
         console.log(`Responded with ${returnedData} with a statusCode of ${statusCode}`);
       })();
