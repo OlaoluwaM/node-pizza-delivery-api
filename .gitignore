@@ -1,5 +1,5 @@
 .vscode
 https
-.env
+.env*
 .data/tokens/*
 .data/users/*

@@ -8,11 +8,10 @@ const https = require('https');
 const config = require('./lib/config');
 const path = require('path');
 const handlers = require('./lib/handlers');
-const helpersFuncObj = require('./lib/helpers');
 
 function serverCallback(req, res) {
   const responseHeaders = {
-    'Content-type': 'application/json',
+    'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, DELETE, PUT',
     'Access-Control-Allow-Headers': '*',
@@ -38,6 +37,7 @@ function serverCallback(req, res) {
       res.end();
       return;
     }
+
     const dataAsString = body.length === 0 ? 'null' : Buffer.concat(body).toString();
     let payload = JSON.parse(dataAsString);
     const chosenHandler = handlers[trimmedPath.split('/')[0]] ?? handlers.notFound;
