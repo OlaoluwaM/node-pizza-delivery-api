@@ -51,9 +51,21 @@ function serverCallback(req, res) {
     };
 
     (async () => {
-      const { statusCode, returnedData } = await chosenHandler(AggregatedData);
+      const { statusCode, returnedData, token = null } = await chosenHandler(AggregatedData);
       res.writeHead(statusCode, responseHeaders);
-      res.end(returnedData);
+
+      if (token) {
+        let returnedDataObj, dataToSend;
+
+        try {
+          returnedDataObj = JSON.parse(returnedData);
+          dataToSend = JSON.stringify({ ...returnedDataObj, newToken: token });
+        } catch {
+          dataToSend = JSON.stringify({ returnedData, newToken: token });
+        }
+
+        res.end(dataToSend);
+      } else res.end(returnedData);
       console.log(`Responded with ${returnedData} with a statusCode of ${statusCode}`);
     })();
   });

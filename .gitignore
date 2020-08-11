@@ -3,3 +3,4 @@ https
 .env*
 .data/tokens/*
 .data/users/*
+nodemon.json
