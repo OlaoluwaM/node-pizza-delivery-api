@@ -1,38 +1,38 @@
 [
-  ["Pepperoni Pizza Small", 4.99],
-  ["Pepperoni Pizza Medium", 10.99],
-  ["Pepperoni Pizza Large", 15.99],
+  ["Pepperoni Pizza Small", 4.99, "Pizza"],
+  ["Pepperoni Pizza Medium", 10.99, "Pizza"],
+  ["Pepperoni Pizza Large", 15.99, "Pizza"],
 
-  ["Extravaganza Pizza Small", 4.99],
-  ["Extravaganza Pizza Medium", 12.99],
-  ["Extravaganza Pizza Large", 19.99],
+  ["Extravaganza Pizza Small", 4.99, "Pizza"],
+  ["Extravaganza Pizza Medium", 12.99, "Pizza"],
+  ["Extravaganza Pizza Large", 19.99, "Pizza"],
 
-  ["Barbecue Chicken Pizza Small", 5.99],
-  ["Barbecue Chicken Pizza Medium", 12.99],
-  ["Barbecue Chicken Pizza Large", 18.99],
+  ["Barbecue Chicken Pizza Small", 5.99, "Pizza"],
+  ["Barbecue Chicken Pizza Medium", 12.99, "Pizza"],
+  ["Barbecue Chicken Pizza Large", 18.99, "Pizza"],
 
-  ["Vegan Pizza Small", 5.99],
-  ["Vegan Pizza Medium", 14.99],
-  ["Vegan Pizza Large", 20.99],
+  ["Vegan Pizza Small", 5.99, "Pizza"],
+  ["Vegan Pizza Medium", 14.99, "Pizza"],
+  ["Vegan Pizza Large", 20.99, "Pizza"],
 
-  ["Meatzza Small", 3.99],
-  ["Meatzza Medium", 9.99],
-  ["Meatzza Large", 16.99],
+  ["Meatzza Small", 3.99, "Pizza"],
+  ["Meatzza Medium", 9.99, "Pizza"],
+  ["Meatzza Large", 16.99, "Pizza"],
 
-  ["Small Fries", 2.79],
-  ["Medium Fries", 4.79],
-  ["Large Fries", 8.79],
+  ["Small Fries", 2.79, "Snack"],
+  ["Medium Fries", 4.79, "Snack"],
+  ["Large Fries", 8.79, "Snack"],
 
-  ["Meat Lover's Pizza Small", 6.99],
-  ["Meat Lover's Pizza Medium", 13.99],
-  ["Meat Lover's Pizza Large", 17.99],
+  ["Meat Lover's Pizza Small", 6.99, "Pizza"],
+  ["Meat Lover's Pizza Medium", 13.99, "Pizza"],
+  ["Meat Lover's Pizza Large", 17.99, "Pizza"],
 
-  ["Vanilla Ice-cream", 2.99],
-  ["Strawberry Ice-cream", 3.99],
-  ["Chocolate Ice-cream", 3.55],
+  ["Vanilla Ice-cream", 2.99, "Dessert"],
+  ["Strawberry Ice-cream", 3.99, "Dessert"],
+  ["Chocolate Ice-cream", 3.55, "Dessert"],
 
-  ["Coke", 3.99],
-  ["Water", 0.5],
-  ["Sprite", 1.59],
-  ["Mountain Dew", 2.99]
+  ["Coke", 3.99, "Drinks"],
+  ["Water", 0.5, "Drinks"],
+  ["Sprite", 1.59, "Drinks"],
+  ["Mountain Dew", 2.99, "Drinks"]
 ]
