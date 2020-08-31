@@ -32,7 +32,7 @@
   ["Chocolate Ice-cream", 3.55, "Dessert"],
 
   ["Coke", 3.99, "Drink"],
-  ["Water", 0.5, "Drink"],
+  ["Water", 0.50, "Drink"],
   ["Sprite", 1.59, "Drink"],
   ["Mountain Dew", 2.99, "Drink"]
 ]
