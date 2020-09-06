@@ -66,6 +66,7 @@ function serverCallback(req, res) {
 
         res.end(dataToSend);
       } else res.end(returnedData);
+
       console.log(`Responded with ${returnedData} with a statusCode of ${statusCode}`);
     })();
   });
