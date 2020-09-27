@@ -1,5 +1,9 @@
 .vscode
 .env*
-.data/tokens
-.data/users
+.data/tokens/*.json
+.data/users/*.json
+
+!.data/tokens/.keep
+!.data/users/.keep
+
 nodemon.json
