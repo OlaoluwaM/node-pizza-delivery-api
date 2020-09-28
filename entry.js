@@ -39,8 +39,17 @@ function serverCallback(req, res) {
     }
 
     const dataAsString = body.length === 0 ? 'null' : Buffer.concat(body).toString();
-    let payload = JSON.parse(dataAsString);
-    const chosenHandler = handlers[trimmedPath.split('/')[0]] ?? handlers.notFound;
+
+    let payload;
+    try {
+      payload = JSON.parse(dataAsString);
+    } catch (error) {
+      payload = new Error('Invalid Payload');
+    }
+
+    const chosenHandler = !(payload instanceof Error)
+      ? handlers[trimmedPath.split('/')[0]] ?? handlers.notFound
+      : handlers.invalidPayload;
 
     const AggregatedData = {
       trimmedPath,
@@ -61,7 +70,7 @@ function serverCallback(req, res) {
         res.end(dataToSend);
       } else res.end(serverResponse);
 
-      console.log(`Responded with ${returnedData} with a statusCode of ${statusCode}`);
+      console.log(`Responded with ${serverResponse} with a statusCode of ${statusCode}`);
     })();
   });
 }
