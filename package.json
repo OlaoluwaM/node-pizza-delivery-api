@@ -1,0 +1,27 @@
+{
+  "name": "node-pizza-delivery-api",
+  "version": "1.0.0",
+  "description": "Pizza Delivery API",
+  "main": "entry.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node entry.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlaoluwaM/node-pizza-delivery-api.git"
+  },
+  "keywords": [],
+  "author": "Olaoluwa Mustapha <jomeemustapha@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlaoluwaM/node-pizza-delivery-api/issues"
+  },
+  "homepage": "https://github.com/OlaoluwaM/node-pizza-delivery-api#readme"
+}
