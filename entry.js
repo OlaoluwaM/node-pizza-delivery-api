@@ -78,12 +78,3 @@ function serverCallback(req, res) {
 http.createServer(serverCallback).listen(config.httpPort, () => {
   console.log(`Listening on port ${config.httpPort}`);
 });
-
-const httpsServerOptions = {
-  key: fs.readFileSync(path.join(__dirname, '/https/key.pem')),
-  cert: fs.readFileSync(path.join(__dirname, '/https/cert.pem')),
-};
-
-https.createServer(httpsServerOptions, serverCallback).listen(config.httpsPort, () => {
-  console.log(`Listening on port ${config.httpsPort}`);
-});
