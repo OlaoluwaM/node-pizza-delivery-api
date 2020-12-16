@@ -1,8 +1,5 @@
 # Pizza Delivery API Docs
 <!-- TODO Update Docs -->
-
-**Note: Instead of mailgun, this API makes use of a service called [sendGrid](https://sendgrid.com/) to send emails (receipts) to users. However, because this API uses the sandbox version of sendGrid, it will not actually send the email, but respond with an `OK` with a status code of 200**
-
 ---
 
 This API enables you to:
@@ -15,14 +12,11 @@ This API enables you to:
 In order to make use of this API you would to run the script with these environment variables defined:
 
 - STRIPE_TEST_KEY
-- SENDGRID_TEST_KEY
-- MY_SENDER_EMAIL
 
-**Note: The base url is `http://localhost:5000` in production, and `http://localhost:3000` in development.**
+**Note: The base url is `http://localhost:5000` in production, and `http://localhost:4000` in development.**
 
-In order to use of the HTTPS protocol you must include an _https_ folder with _key.pem_ and _cert.pem_ files.
-
-## /users
+# Needs to be updated
+<!-- ## /users
 
 ### POST
 
@@ -282,4 +276,4 @@ Body Example
   currency: 'usd' or 'gdp', any other value will not be accepted
   card: 'tok_mastercard' or 'tok_visa', any other value will not be accepted
 }
-```
+``` -->

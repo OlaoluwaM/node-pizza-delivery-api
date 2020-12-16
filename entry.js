@@ -1,12 +1,9 @@
 // API primary file
 
 // Dependencies
-const fs = require('fs');
 const url = require('url');
 const http = require('http');
-const https = require('https');
 const config = require('./lib/config');
-const path = require('path');
 const handlers = require('./lib/handlers');
 
 function serverCallback(req, res) {
