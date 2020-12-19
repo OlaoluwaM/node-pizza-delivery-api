@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node entry.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "nodemon -r dotenv/config ./entry.js dotenv_config_path=./.env"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/OlaoluwaM/node-pizza-delivery-api/issues"
   },
-  "homepage": "https://github.com/OlaoluwaM/node-pizza-delivery-api#readme"
+  "homepage": "https://github.com/OlaoluwaM/node-pizza-delivery-api#readme",
+  "dependencies": {
+    "postmark": "^2.6.1",
+    "stripe": "^8.129.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
