@@ -7,3 +7,4 @@
 !.data/users/.keep
 
 nodemon.json
+node_modules
