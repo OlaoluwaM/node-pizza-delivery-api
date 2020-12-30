@@ -1,38 +1,37 @@
 [
-  ["Pepperoni Pizza Small", 4.99, "Pizza"],
-  ["Pepperoni Pizza Medium", 10.99, "Pizza"],
-  ["Pepperoni Pizza Large", 15.99, "Pizza"],
+  ["Pepperoni Pizza Small", 4.99, "Pizza", { "query": "pizza" }],
+  ["Pepperoni Pizza Medium", 10.99, "Pizza", { "query": "pizza" }],
+  ["Pepperoni Pizza Large", 15.99, "Pizza", { "query": "pizza" }],
 
-  ["Extravaganza Pizza Small", 4.99, "Pizza"],
-  ["Extravaganza Pizza Medium", 12.99, "Pizza"],
-  ["Extravaganza Pizza Large", 19.99, "Pizza"],
+  ["Extravaganza Pizza Small", 4.99, "Pizza", { "query": "pizza" }],
+  ["Extravaganza Pizza Medium", 12.99, "Pizza", { "query": "pizza" }],
+  ["Extravaganza Pizza Large", 19.99, "Pizza", { "query": "pizza" }],
 
-  ["Barbecue Chicken Pizza Small", 5.99, "Pizza"],
-  ["Barbecue Chicken Pizza Medium", 12.99, "Pizza"],
-  ["Barbecue Chicken Pizza Large", 18.99, "Pizza"],
+  ["Barbecue Chicken Pizza Small", 5.99, "Pizza", { "query": "pizza" }],
+  ["Barbecue Chicken Pizza Medium", 12.99, "Pizza", { "query": "pizza" }],
+  ["Barbecue Chicken Pizza Large", 18.99, "Pizza", { "query": "pizza" }],
 
-  ["Vegan Pizza Small", 5.99, "Pizza"],
-  ["Vegan Pizza Medium", 14.99, "Pizza"],
-  ["Vegan Pizza Large", 20.99, "Pizza"],
+  ["Vegan Pizza Small", 5.99, "Pizza", { "query": "pizza" }],
+  ["Vegan Pizza Medium", 14.99, "Pizza", { "query": "pizza" }],
+  ["Vegan Pizza Large", 20.99, "Pizza", { "query": "pizza" }],
 
-  ["Meatzza Small", 3.99, "Pizza"],
-  ["Meatzza Medium", 9.99, "Pizza"],
-  ["Meatzza Large", 16.99, "Pizza"],
+  ["Meatzza Small", 3.99, "Pizza", { "query": "pizza" }],
+  ["Meatzza Medium", 9.99, "Pizza", { "query": "pizza" }],
+  ["Meatzza Large", 16.99, "Pizza", { "query": "pizza" }],
 
-  ["Small Fries", 2.79, "Snack"],
-  ["Medium Fries", 4.79, "Snack"],
-  ["Large Fries", 8.79, "Snack"],
+  ["Meat Lover's Pizza Small", 6.99, "Pizza", { "query": "pizza" }],
+  ["Meat Lover's Pizza Medium", 13.99, "Pizza", { "query": "pizza" }],
+  ["Meat Lover's Pizza Large", 17.99, "Pizza", { "query": "pizza" }],
 
-  ["Meat Lover's Pizza Small", 6.99, "Pizza"],
-  ["Meat Lover's Pizza Medium", 13.99, "Pizza"],
-  ["Meat Lover's Pizza Large", 17.99, "Pizza"],
+  ["Small Fries", 2.79, "Snack", { "query": "fries" }],
+  ["Medium Fries", 4.79, "Snack", { "query": "fries" }],
+  ["Large Fries", 8.79, "Snack", { "query": "fries" }],
 
-  ["Vanilla Ice-cream", 2.99, "Dessert"],
-  ["Strawberry Ice-cream", 3.99, "Dessert"],
-  ["Chocolate Ice-cream", 3.55, "Dessert"],
+  ["Vanilla Ice-cream", 2.99, "Dessert", "5A0O12BIsjY"],
+  ["Strawberry Ice-cream", 3.99, "Dessert", "TLD6iCOlyb0"],
+  ["Chocolate Ice-cream", 3.55, "Dessert", "wxmrTxUAMJE"],
 
-  ["Coke", 3.99, "Drink"],
-  ["Water", 0.50, "Drink"],
-  ["Sprite", 1.59, "Drink"],
-  ["Mountain Dew", 2.99, "Drink"]
+  ["Coke", 3.99, "Drink", "z8PEoNIlGlg"],
+  ["Water", 0.5, "Drink", "oWV-Pgu142A"],
+  ["Sprite", 1.59, "Drink", "4KLT91f3mAM"]
 ]
