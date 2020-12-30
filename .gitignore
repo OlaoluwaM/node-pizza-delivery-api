@@ -2,6 +2,7 @@
 .env*
 .data/tokens/*.json
 .data/users/*.json
+*.http
 
 !.data/tokens/.keep
 !.data/users/.keep
