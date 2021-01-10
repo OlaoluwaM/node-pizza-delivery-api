@@ -27,7 +27,6 @@
   "dependencies": {
     "node-fetch": "^2.6.1",
     "postmark": "^2.6.1",
-    "stripe": "^8.129.0",
     "unsplash-js": "^7.0.2"
   },
   "devDependencies": {
